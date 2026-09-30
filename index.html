@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>London, 22. bis 25. Oktober 2026</title>
+<style>
+  :root{
+    --ink:#0f1520; --body:#39404b; --muted:#77808c; --line:#e6e2db;
+    --paper:#fff; --page:#f6f4f0;
+    --d1:#b45309; --d1-bg:#fdf5e9;
+    --d2:#0f6e78; --d2-bg:#eaf6f6;
+    --d3:#9d174d; --d3-bg:#fdeef3;
+    --d4:#334155; --d4-bg:#eef1f5;
+    --flag:#a8341a; --flag-bg:#fceede;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--page);color:var(--body);font-size:15px;line-height:1.5;
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .sheet{max-width:1180px;margin:0 auto;padding:32px 20px 56px}
+
+  /* Kopf */
+  header{border-bottom:2px solid var(--ink);padding-bottom:16px;margin-bottom:20px}
+  .kicker{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--d1);font-weight:700;margin:0 0 7px}
+  h1{font-size:31px;line-height:1.14;margin:0 0 7px;color:var(--ink);letter-spacing:-.02em}
+  .lede{margin:0;color:var(--muted);font-size:14px}
+  .stamp{font-size:11.5px;color:var(--muted);margin-top:9px}
+
+  /* Eckdaten */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+  .fact{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px 13px}
+  .fact .lab{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:5px}
+  .fact .val{font-size:14px;color:var(--ink);font-weight:650;line-height:1.3}
+  .fact .sub{font-size:11.5px;color:var(--muted);margin-top:2px}
+
+  /* Tagesraster */
+  .days{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:start;margin-bottom:22px}
+  @media (min-width:1500px){ .days{grid-template-columns:repeat(4,1fr)} }
+  .day{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+       border-top:3px solid var(--ac)}
+  .day.d1{--ac:var(--d1);--acbg:var(--d1-bg)}
+  .day.d2{--ac:var(--d2);--acbg:var(--d2-bg)}
+  .day.d3{--ac:var(--d3);--acbg:var(--d3-bg)}
+  .day.d4{--ac:var(--d4);--acbg:var(--d4-bg)}
+
+  .dayhead{padding:11px 16px 10px;background:var(--acbg)}
+  .dayhead .wk{font-size:15px;font-weight:700;color:var(--ac);letter-spacing:-.01em}
+  .dayhead .dt{font-size:11.5px;color:var(--muted);font-weight:600;margin-left:6px}
+  .dayhead .sum{font-size:11.5px;color:var(--body);margin-top:3px;line-height:1.35}
+
+  .tl{padding:4px 16px 14px}
+  .ev{display:grid;grid-template-columns:44px 1fr;gap:11px;padding:9px 0;border-bottom:1px solid var(--line)}
+  .ev:last-child{border-bottom:none}
+  .ev .t{font-size:12px;font-weight:700;color:var(--ac);font-variant-numeric:tabular-nums;padding-top:1px}
+  .ev .t em{display:block;font-style:normal;font-size:9.5px;color:var(--muted);font-weight:600;letter-spacing:.03em}
+  .ev h4{margin:0 0 1px;font-size:13.5px;color:var(--ink);font-weight:650;line-height:1.32}
+  .ev .meta{font-size:11.5px;color:var(--muted);line-height:1.42}
+  .ev .who{font-size:11.5px;color:var(--body);line-height:1.42;margin-top:2px}
+  .ev .who b{font-weight:600;color:var(--ink)}
+  .ev .go{display:inline-block;font-size:10.5px;color:var(--ac);background:var(--acbg);
+          border-radius:3px;padding:1px 5px;margin-top:4px;font-weight:600}
+  .note{margin-top:7px;font-size:11.5px;line-height:1.45;color:var(--flag);
+        background:var(--flag-bg);border-left:3px solid var(--flag);border-radius:0 5px 5px 0;padding:6px 9px}
+  .free .ev h4{color:var(--muted);font-weight:600}
+
+  /* Unten */
+  .row2{display:grid;grid-template-columns:1.05fr .95fr;gap:16px;margin-bottom:16px}
+  .row3{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .block{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:15px 18px 17px}
+  .block h2{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--d1);margin:0 0 10px;font-weight:700}
+  table.t{width:100%;border-collapse:collapse;font-size:12.5px}
+  table.t td{padding:5px 0;border-bottom:1px solid var(--line)}
+  table.t tr:last-child td{border-bottom:none}
+  table.t td:last-child{text-align:right;color:var(--ink);font-weight:650;white-space:nowrap;padding-left:10px;font-variant-numeric:tabular-nums}
+  ul.todo{list-style:none;margin:0;padding:0}
+  ul.todo li{font-size:12.5px;padding:6px 0 6px 22px;position:relative;border-bottom:1px solid var(--line)}
+  ul.todo li:last-child{border-bottom:none}
+  ul.todo li:before{content:"";position:absolute;left:2px;top:10px;width:10px;height:10px;
+                    border:1.5px solid var(--muted);border-radius:3px}
+  ul.plain{list-style:none;margin:0;padding:0}
+  ul.plain li{font-size:12.5px;padding:4px 0 4px 15px;position:relative;line-height:1.45}
+  ul.plain li:before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--d1)}
+  footer{margin-top:22px;border-top:1px solid var(--line);padding-top:12px;font-size:11.5px;color:var(--muted)}
+  footer p{margin:0 0 4px}
+
+  @media (max-width:900px){
+    .sheet{padding:20px 13px 40px}
+    h1{font-size:24px}
+    .days{grid-template-columns:1fr}
+    .facts{grid-template-columns:1fr 1fr}
+    .row2,.row3{grid-template-columns:1fr}
+  }
+  @media (max-width:430px){ .facts{grid-template-columns:1fr} }
+  @media print{
+    body{background:#fff;font-size:10.5pt}
+    .sheet{max-width:none;padding:0}
+    .days{grid-template-columns:1fr 1fr}
+    .day,.block,.fact{break-inside:avoid;page-break-inside:avoid}
+    .fact,.day{border-color:#ccc}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <p class="kicker">Reiseplan</p>
+    <h1>London, 22. bis 25. Oktober 2026</h1>
+    <p class="lede">Vier Tage, drei Nächte. Freunde treffen, Essen, Comedy, Club. Hotel The Trafalgar St. James, Trafalgar Square.</p>
+    <p class="stamp">Alle Zeiten in UK-Zeit · Stand 30. September 2026</p>
+  </header>
+
+  <div class="facts">
+    <div class="fact"><div class="lab">Hinflug Do</div><div class="val">Zürich 12:05 → London 13:00</div><div class="sub">LX332 · Heathrow T2 · Economy Light</div></div>
+    <div class="fact"><div class="lab">Rückflug So</div><div class="val">London 12:05 → Zürich 14:45</div><div class="sub">LX319 · Heathrow T2 · nur Handgepäck</div></div>
+    <div class="fact"><div class="lab">Hotel</div><div class="val">Trafalgar St. James</div><div class="sub">2 Spring Gardens · Charing Cross 5 Min</div></div>
+    <div class="fact"><div class="lab">Vor Ort</div><div class="val">Alles 14 bis 35 Min zu Fuß</div><div class="sub">Soho, Mayfair, Covent Garden, Westminster</div></div>
+  </div>
+
+  <div class="days">
+
+    <!-- DONNERSTAG -->
+    <section class="day d1">
+      <div class="dayhead">
+        <span class="wk">Donnerstag</span><span class="dt">22.10.</span>
+        <div class="sum">Anreise, dann Lunch, Dinner und Drinks</div>
+      </div>
+      <div class="tl">
+        <div class="ev">
+          <div class="t">13:00<em>LHR T2</em></div>
+          <div>
+            <h4>Ankunft Heathrow Terminal 2</h4>
+            <div class="meta">Ohne Aufgabegepäck in 45 bis 60 Min draußen</div>
+            <span class="go">Elizabeth Line, ca. 35 Min</span>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">15:00<em>bis 17:00</em></div>
+          <div>
+            <h4>Late Lunch · Bancone Golden Square</h4>
+            <div class="meta">8-10 Lower James Street, Soho</div>
+            <div class="who"><b>Amal, Patrick, Alex, Nikolai, Marco</b></div>
+            <span class="go">14 Min zu Fuß vom Hotel</span>
+            <div class="note">Direkt vom Flughafen ins Restaurant, Check-in erst danach. Falls es nicht reicht, mit Gepäck dazukommen.</div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">17:15<em>Hotel</em></div>
+          <div>
+            <h4>Check-in Trafalgar St. James</h4>
+            <div class="meta">2 Spring Gardens, Trafalgar Square</div>
+            <span class="go">14 Min zu Fuß ab Bancone</span>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">20:00</div>
+          <div>
+            <h4>Dinner · Hakkasan Mayfair</h4>
+            <div class="meta">17 Bruton Street · Küche bis 23:45</div>
+            <div class="who"><b>Alex, Nikolai, Sam, Sams Freundin, Marco</b></div>
+            <span class="go">22 Min zu Fuß vom Hotel</span>
+            <div class="note">Dresscode smart. Keine Hoodies, keine Sportkleidung, keine Caps.</div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">22:30</div>
+          <div>
+            <h4>Drinks · Kiyori Bar</h4>
+            <div class="meta">Aki London, 1 Cavendish Square · offen bis 01:00</div>
+            <div class="who"><b>Alex, Nikolai, Sam, Sams Freundin, Marco</b></div>
+            <span class="go">12 Min zu Fuß ab Hakkasan</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREITAG -->
+    <section class="day d2">
+      <div class="dayhead">
+        <span class="wk">Freitag</span><span class="dt">23.10.</span>
+        <div class="sum">Der dichteste Tag. Shopping, Lunch, dann Covent Garden</div>
+      </div>
+      <div class="tl">
+        <div class="ev">
+          <div class="t">09:30<em>bis 11:15</em></div>
+          <div>
+            <h4>MG&amp;Co Matchbox Engravings</h4>
+            <div class="meta">194 Ebury Street, Belgravia</div>
+            <span class="go">Taxi 15 Min vom Hotel</span>
+            <div class="note">Gravur kann Wartezeit bedeuten, gleich beim Reinkommen anmelden.</div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">11:15<em>bis 11:40</em></div>
+          <div>
+            <h4>Bummel über Sloane Square und Sloane Street</h4>
+            <div class="meta">Richtung Knightsbridge · Harrods lassen wir bewusst aus</div>
+            <span class="go">25 Min zu Fuß</span>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">12:00</div>
+          <div>
+            <h4>Lunch · Dishoom Carnaby</h4>
+            <div class="meta">22 Kingly Street, Carnaby</div>
+            <div class="who"><b>Amal, Patrick, Alex, Nikolai, Marco</b></div>
+            <span class="go">Ca. 20 Min ab Knightsbridge</span>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">14:00<em>bis 16:45</em></div>
+          <div>
+            <h4>Selfridges und Jacques Marie Mage</h4>
+            <div class="meta">400 Oxford Street · JMM Gallery, 20-22 Chiltern Street, offen bis 19:00</div>
+            <span class="go">JMM 7 Min zu Fuß ab Selfridges</span>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">17:30</div>
+          <div>
+            <h4>Dinner · Din Tai Fung Covent Garden</h4>
+            <div class="meta">5 Henrietta Street</div>
+            <div class="who"><b>Amal, Patrick, Alex, Marco, Kristina, Nikolai, Felix, Shan, Yannick</b></div>
+            <span class="go">7 Min zu Fuß zum Comedy Club</span>
+            <div class="note">Pünktlich 17:30, um 18:35 los. Bitte gleich beim Setzen sagen.</div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">18:40<em>Treffen</em></div>
+          <div>
+            <h4>Treffen vor dem Comedy Club</h4>
+            <div class="meta">170A Drury Lane · Einlass ab 18:00</div>
+            <div class="who"><b>dazu Dominik und Anna</b></div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">19:00<em>bis 20:30</em></div>
+          <div>
+            <h4>Top Secret Comedy Club, Early Show</h4>
+            <div class="meta">170A Drury Lane · Tickets ab 15 GBP</div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">21:00</div>
+          <div>
+            <h4>Drinks · Scarfes Bar</h4>
+            <div class="meta">Rosewood London, 252 High Holborn · Live Jazz</div>
+            <div class="who"><b>Amal, Patrick, Alex, Marco, Kristina, Nikolai, Felix, Shan</b></div>
+            <span class="go">16 Min zu Fuß ab Drury Lane</span>
+            <div class="note">Freitags voll, Tisch muss vorab gebucht sein.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAMSTAG -->
+    <section class="day d3">
+      <div class="dayhead">
+        <span class="wk">Samstag</span><span class="dt">24.10.</span>
+        <div class="sum">Kultur am Morgen, freier Nachmittag, großer Abend</div>
+      </div>
+      <div class="tl">
+        <div class="ev">
+          <div class="t">10:00<em>bis 12:30</em></div>
+          <div>
+            <h4>Tate Modern · Frida Kahlo</h4>
+            <div class="meta">Bankside · „Frida: The Making of an Icon“, über 30 Werke</div>
+            <span class="go">35 Min zu Fuß über die Millennium Bridge</span>
+            <div class="note">Timed Entry vorher online buchen.</div>
+          </div>
+        </div>
+        <div class="ev free">
+          <div class="t">12:30<em>bis 19:00</em></div>
+          <div>
+            <h4>Freier Nachmittag</h4>
+            <div class="meta">Borough Market liegt direkt neben der Tate, danach über Covent Garden oder St James's Park zurück</div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">16:00<em>Hotel</em></div>
+          <div>
+            <h4>Umziehen für Annabel's</h4>
+            <div class="meta">Der Abend geht lang</div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">20:00</div>
+          <div>
+            <h4>Dinner und Drinks · Annabel's</h4>
+            <div class="meta">44 Berkeley Square, im The Nightclub</div>
+            <div class="who"><b>Amal, Patrick, Alex, Marco, Kristina, Nikolai, Eva, Evas Freund, Yannick</b></div>
+            <span class="go">21 Min zu Fuß vom Hotel</span>
+            <div class="note">Jacke und Hemd für Herren, Krawatte nicht mehr Pflicht, keine Sneaker, kein Denim. Alle Namen auf die Gästeliste.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SONNTAG -->
+    <section class="day d4">
+      <div class="dayhead">
+        <span class="wk">Sonntag</span><span class="dt">25.10.</span>
+        <div class="sum">Abreise, in der Nacht endet die Sommerzeit</div>
+      </div>
+      <div class="tl">
+        <div class="ev">
+          <div class="t">07:45<em>Check-out</em></div>
+          <div>
+            <h4>Abfahrt zum Flughafen</h4>
+            <div class="meta">Piccadilly Line ab Leicester Square ca. 55 Min, Elizabeth Line ab Tottenham Court Road ca. 50 Min</div>
+            <span class="go">Taxi 45 bis 70 Min</span>
+            <div class="note">Ankunft Terminal gegen 09:00, rund drei Stunden Puffer.</div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">12:05<em>LHR T2</em></div>
+          <div>
+            <h4>Rückflug LX319 nach Zürich</h4>
+            <div class="meta">Economy Light, nur Handgepäck</div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="t">14:45<em>ZRH</em></div>
+          <div>
+            <h4>Ankunft Zürich</h4>
+            <div class="meta">Die Uhr wurde nachts um 02:00 eine Stunde zurückgestellt</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="row2">
+    <div class="block">
+      <h2>Wegzeiten ab Hotel</h2>
+      <table class="t">
+        <tr><td>Bancone Golden Square</td><td>14 Min</td></tr>
+        <tr><td>Top Secret Comedy Club</td><td>18 Min</td></tr>
+        <tr><td>Annabel's, Berkeley Square</td><td>21 Min</td></tr>
+        <tr><td>Hakkasan Mayfair</td><td>22 Min</td></tr>
+        <tr><td>Dishoom Carnaby</td><td>25 Min</td></tr>
+        <tr><td>Scarfes Bar, Holborn</td><td>25 Min</td></tr>
+        <tr><td>Din Tai Fung, Covent Garden</td><td>26 Min</td></tr>
+        <tr><td>Kiyori, Cavendish Square</td><td>28 Min</td></tr>
+        <tr><td>Tate Modern</td><td>35 Min</td></tr>
+        <tr><td>Selfridges</td><td>Tube 15 Min</td></tr>
+        <tr><td>Heathrow Terminal 2</td><td>Tube 55 Min</td></tr>
+      </table>
+    </div>
+    <div class="block">
+      <h2>Noch zu klären</h2>
+      <ul class="todo">
+        <li>Tate Modern: Ticket für Frida am Samstag buchen</li>
+        <li>Scarfes Bar: Tisch für 8 reservieren</li>
+        <li>Kiyori: Tisch für 5 reservieren</li>
+        <li>Comedy Club: Plätze für den 19:00 Early Show sichern</li>
+        <li>Annabel's: alle neun Namen auf die Gästeliste</li>
+        <li>Hakkasan und Dishoom auf Gruppengröße bestätigen</li>
+        <li>MG&amp;Co: Gravur vorab anmelden</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row3">
+    <div class="block">
+      <h2>Praktisches</h2>
+      <ul class="plain">
+        <li>Ende Oktober in London: 8 bis 15 Grad, Regen wahrscheinlich. Regenjacke, Schirm, wasserfeste Schuhe.</li>
+        <li>Zwei smarte Outfits einpacken, für Hakkasan und Annabel's.</li>
+        <li>Freitag tagsüber viel zu Fuß, bequeme Sohle.</li>
+        <li>Contactless Karte oder Handy reicht für Tube und Bus, keine Oyster nötig.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h2>Nummern für Reservierungen</h2>
+      <table class="t">
+        <tr><td>Kiyori Bar</td><td>+44 7402 847957</td></tr>
+        <tr><td>Scarfes Bar</td><td>+44 20 3747 8670</td></tr>
+        <tr><td>Hotel Trafalgar St. James</td><td>+44 20 7870 2900</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <p>Adressen und Öffnungszeiten gegen die Seiten der Anbieter geprüft. Wegzeiten über OSRM berechnet und auf Gehgeschwindigkeit umgerechnet, ohne Verkehrsspitzen.</p>
+    <p>Änderungen bitte an Marco, er pflegt den Plan.</p>
+  </footer>
+
+</div>
+</body>
+</html>
